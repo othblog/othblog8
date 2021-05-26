@@ -1,0 +1,150 @@
+baseURL = "https://othblog.github.io"
+languageCode = "zh-Tw"
+title = "OT's programming life"
+theme = "liva-hugo"
+paginate = 6
+disqusShortname = ""
+
+[deployment]
+# By default, files are uploaded in an arbitrary order.
+# Files that match the regular expressions in the "Order" list
+# will be uploaded first, in the listed order.
+order = [".jpg$", ".gif$"]
+
+
+[[deployment.targets]]
+
+name = "mydeployment"
+
+
+
+[[deployment.matchers]]
+pattern = "^.+\\.(js|css|svg|ttf)$"
+cacheControl = "max-age=31536000, no-transform, public"
+gzip = true
+
+[[deployment.matchers]]
+pattern = "^.+\\.(png|jpg)$"
+cacheControl = "max-age=31536000, no-transform, public"
+gzip = false
+
+[[deployment.matchers]]
+
+pattern = "^sitemap\\.xml$"
+contentType = "application/xml"
+gzip = true
+
+[[deployment.matchers]]
+pattern = "^.+\\.(html|xml|json)$"
+gzip = true
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params.plugins]
+
+  # CSS Plugins
+  [[params.plugins.css]]
+  URL = "plugins/bootstrap/bootstrap.min.css"
+  [[params.plugins.css]]
+  URL = "plugins/slick/slick.css"
+  [[params.plugins.css]]
+  URL = "plugins/themify-icons/themify-icons.css"
+  [[params.plugins.css]]
+  URL = "plugins/venobox/venobox.css"
+
+  # JS Plugins
+  [[params.plugins.js]]
+  URL = "plugins/jQuery/jquery.min.js"
+  [[params.plugins.js]]
+  URL = "plugins/bootstrap/bootstrap.min.js"
+  [[params.plugins.js]]
+  URL = "plugins/slick/slick.min.js"
+  [[params.plugins.js]]
+  URL = "plugins/venobox/venobox.min.js"
+  [[params.plugins.js]]
+  URL = "plugins/search/fuse.min.js"
+  [[params.plugins.js]]
+  URL = "plugins/search/mark.js"
+  [[params.plugins.js]]
+  URL = "plugins/search/search.js"
+
+[menu]
+
+  # main menu
+  [[menu.main]]
+  name = "About"
+  URL = "about"
+  weight = 1
+
+  [[menu.main]]
+  name = "Post"
+  URL = "blog"
+  weight = 2
+
+  [[menu.main]]
+  name = "Contact"
+  URL = "contact"
+  weight = 3
+
+  # footer menu
+  [[menu.footer]]
+  name = "About"
+  URL = "about"
+  weight = 1
+
+  [[menu.footer]]
+  name = "Post"
+  URL = "blog"
+  weight = 2
+
+  [[menu.footer]]
+  name = "Contact"
+  URL = "contact"
+  weight = 3
+
+[params]
+logo = "images/blog2.png"
+title = "OTTTTT"
+home = "Home"
+# Meta data
+description = "This is meta description"
+author = "Thomas Yu"
+# Google Analitycs
+googleAnalitycsID = "Your ID"
+# Contact Information
+email = "ych930719@email.com"
+
+# copyright
+copyright = "| 2021 othsueh may the force be with you <Powered by Hugo & liva |"
+
+  # Preloader
+  [params.preloader]
+  enable = true
+  preloader = "" # use .jpg , .png , .svg or .gif format
+
+  # search
+  [params.search]
+  enable = true
+
+
+
+
+[[params.social]]
+title = "facebook"
+icon = "ti-facebook" # themify icon : https://themify.me/themify-icons
+link = "https://zh-tw.facebook.com/people/%E4%BD%99%E7%AB%A3%E5%AD%B8/100008325006982/"
+
+[[params.social]]
+title = "instagram"
+icon = "ti-instagram" # themify icon : https://themify.me/themify-icons
+link = "https://www.instagram.com/o_t_hsueh/?hl=zh-tw"
+
+[[params.social]]
+title = "github"
+icon = "ti-github" # themify icon : https://themify.me/themify-icons
+link = "https://github.com/othsueh"
+
+[[params.social]]
+title = "linkedin"
+icon = "ti-linkedin" # themify icon : https://themify.me/themify-icons
+link = "https://tw.linkedin.com/in/chun-hsueh-yu-9537761b9"
